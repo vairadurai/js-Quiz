@@ -2,7 +2,7 @@
 
 document.getElementsByClassName('question')[0].style.display = "block";
 
-next = (question_number) => {
+next_question = (question_number) => {
     document.getElementsByClassName('question')[question_number- 1].style.display = "none";
     document.getElementsByClassName('question')[question_number].style.display = "block";
 }
