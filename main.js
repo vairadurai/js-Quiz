@@ -2,36 +2,35 @@
 
 document.getElementsByClassName('question')[0].style.display = "block";
 
-next = (one) => {
-    document.getElementsByClassName('question')[one - 1].style.display = "none";
-    document.getElementsByClassName('question')[one].style.display = "block";
+next = (question_number) => {
+    document.getElementsByClassName('question')[question_number- 1].style.display = "none";
+    document.getElementsByClassName('question')[question_number].style.display = "block";
 }
-let q1 = document.getElementById('ans1'),
-    q2 = document.getElementById('ans2'),
-    q3 = document.getElementById('ans3'),
-    q4 = document.getElementById('ans4');
-document.getElementById('submit').addEventListener('click', result);
-
+let question1 = document.getElementById('answer1'),
+    question2 = document.getElementById('answer2'),
+    question3 = document.getElementById('answer3'),
+    question4 = document.getElementById('answer4');
 
 function result() {
     let score = 0;
-    if (q1.checked) {
+    if (question1.checked) {
         score++;
     }
-    if (q2.checked) {
+    if (question2.checked) {
         score++;
     }
-    if (q3.checked) {
+    if (question3.checked) {
         score++;
     }
-    if (q4.checked) {
+    if (question4.checked) {
         score++;
     }
     console.log(score);
-    const answerEle = document.getElementById('answer');
-    answerEle.innerHTML = 'Your Score Is :'+score;
+    const answerElement = document.getElementById('answer');
+    answerElement.innerHTML = 'Your Score Is :' + score;
 }
 
+document.getElementById('submit').addEventListener('click', result);
 
 
 
